@@ -3,21 +3,26 @@
 // ////////////////////////////////////
 
 @include keyframes(carroussel) {
-  from {
-    @include transform(rotate(0deg));
-  }
-  to {
-    @include transform(rotate(360deg));
-  }
+  from { @include transform(rotate(0deg)); }
+  to {   @include transform(rotate(360deg)); }
 }
 
 @include keyframes(warp) {
-  0%    {  @include transform(translateZ(1500px));  }
-  85%   {  @include transform(translateZ(-100px));     }
-  100%  {  @include transform(translateZ(0px));     }
+  0% {   @include transform(translateZ(1500px)); opacity: 0; }
+  25% {  opacity: 0; }
+  85% {  @include transform(translateZ(-50px)); }
+  100% { @include transform(translateZ(0)); }
 }
 
-@include keyframes(reveal){
-    0%  { opacity: 0;   }
-    100%{ opacity: 1;   }
+@include keyframes(reveal) {
+  0% {   opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes(shine) {
+  0% {   opacity: .1; }
+  40% {  opacity: .2; }
+  45% {  opacity: .0; }
+  50% {  opacity: .2; }
+  100% { opacity: .1; }
 }
